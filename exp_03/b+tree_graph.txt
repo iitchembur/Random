@@ -1,0 +1,27 @@
+digraph BPlusTree {
+    // Basic styling
+    node [shape=record, fontname="Arial"];
+    rankdir=TB; // Top to Bottom layout
+    
+    // Internal node (Routing only)
+    root [label="<f0> | 20 | <f1>", style=filled, fillcolor=lightblue];
+    
+    // Leaf nodes (Store actual data)
+    leaf1 [label="<f0> | 5 | <f1> | 10 | <next>", style=filled, fillcolor=lightgreen];
+    leaf2 [label="<f0> | 20 | <f1> | 30 | <next>", style=filled, fillcolor=lightgreen];
+    leaf3 [label="<f0> | 40 | <f1> | 50 | <next>", style=filled, fillcolor=lightgreen];
+    
+    // Tree edges (from routing node to leaves)
+    root:f0 -> leaf1;
+    root:f1 -> leaf2 [color=gray50, style=dashed]; // Using a dashed style just for visual separation
+    
+    // Creating a higher level root to show a taller tree
+    superRoot [label="<f0> | 40 | <f1>", style=filled, fillcolor=lightblue];
+    superRoot:f0 -> root;
+    superRoot:f1 -> leaf3; // In a real B+ tree this would point to another internal node, simplified here for display
+
+    // Linked list pointers at the leaf level
+    // constraint=false prevents these edges from messing up the Top-to-Bottom tree layout
+    leaf1:next -> leaf2:f0 [color=blue, constraint=false, label="Next"];
+    leaf2:next -> leaf3:f0 [color=blue, constraint=false, label="Next"];
+}

@@ -1,0 +1,16 @@
+digraph BTree {
+    // Basic styling for the nodes
+    node [shape=record, fontname="Arial", style=filled, fillcolor=lightgray];
+    edge [color=gray30];
+
+    // Root node
+    root [label="<f0> | 20 | <f1>"];
+
+    // Level 1 nodes (Internal / Leaves depending on height)
+    child1 [label="<f0> | 5 | <f1> | 10 | <f2>"];
+    child2 [label="<f0> | 30 | <f1> | 40 | <f2>"];
+
+    // Connect root to children
+    root:f0 -> child1;
+    root:f1 -> child2;
+}

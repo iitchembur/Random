@@ -1,0 +1,17 @@
+digraph RecursionTree {
+    node [shape=circle];
+    n16 [label="16"];
+    n8_1 [label="8"]; n8_2 [label="8"];
+    n4_1 [label="4"]; n4_2 [label="4"]; n4_3 [label="4"]; n4_4 [label="4"];
+    n2_1 [label="2"]; n2_2 [label="2"]; n2_3 [label="2"]; n2_4 [label="2"];
+    n2_5 [label="2"]; n2_6 [label="2"]; n2_7 [label="2"]; n2_8 [label="2"];
+
+    n16 -> n8_1; n16 -> n8_2;
+    n8_1 -> n4_1; n8_1 -> n4_2;
+    n8_2 -> n4_3; n8_2 -> n4_4;
+    
+    n4_1 -> n2_1; n4_1 -> n2_2;
+    n4_2 -> n2_3; n4_2 -> n2_4;
+    n4_3 -> n2_5; n4_3 -> n2_6;
+    n4_4 -> n2_7; n4_4 -> n2_8;
+}

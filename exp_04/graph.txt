@@ -1,0 +1,33 @@
+digraph RedBlackTree {
+    // General node styling
+    node [shape=circle, fontname="Helvetica", style=filled, fontcolor=white, width=0.6];
+    
+    // Define Black Nodes
+    15 [fillcolor=black];
+    5 [fillcolor=black];
+    20 [fillcolor=black];
+    
+    // Define Red Nodes
+    10 [fillcolor=red];
+    30 [fillcolor=red];
+    
+    // Define hidden TNULL nodes for visual balance (Optional, but good for understanding)
+    null1 [shape=point]; null2 [shape=point]; null3 [shape=point]; 
+    null4 [shape=point]; null5 [shape=point]; null6 [shape=point];
+    
+    // Edges
+    15 -> 5;
+    15 -> 20;
+    
+    5 -> null1;
+    5 -> 10;
+    
+    10 -> null2;
+    10 -> null3;
+    
+    20 -> null4;
+    20 -> 30;
+    
+    30 -> null5;
+    30 -> null6;
+}
